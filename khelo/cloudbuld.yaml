@@ -3,6 +3,7 @@ steps:
     args: ['mvn', 'clean', 'install']
     dir: '/workspace/khelo'
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/khelo-dummy/khelo', '-f', 'Dockerfile', '.']
+    args: ['build', '-t', 'gcr.io/khelo-dummy/khelo', '.']
+    dir: '/workspace/khelo'
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/khelo-dummy/khelo']
