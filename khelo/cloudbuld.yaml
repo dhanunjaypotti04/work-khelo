@@ -2,6 +2,6 @@ steps:
   - name: 'gcr.io/cloud-builders/mvn'
     args: ['clean', 'install']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/YOUR_PROJECT_ID/khelo', '.']
+    args: ['build', '-t', 'gcr.io/khelo-dummy/khelo', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/YOUR_PROJECT_ID/khelo']
+    args: ['push', 'gcr.io/khelo-dummy/khelo']
