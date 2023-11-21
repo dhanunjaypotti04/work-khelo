@@ -3,16 +3,14 @@ package com.khelo.entity;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.stereotype.Component;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Data
-@AllArgsConstructor
 @Component
-public class MemberData {
+@Data
+public class CommunityData {
 	@DBRef
-	private Player playerId;
+	private String communityId;
 	private int status;
-	private String details;
+	private String playerDetails;
 
 }

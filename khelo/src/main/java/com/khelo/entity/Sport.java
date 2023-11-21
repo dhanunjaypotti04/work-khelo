@@ -8,11 +8,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Document(collection = "sports")
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Document(collection = "sports")
 public class Sport {
 
 	@Id

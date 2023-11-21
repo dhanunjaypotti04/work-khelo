@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -30,9 +31,10 @@ public class Community {
 	@Field(name="community_icon")
 	private String communityIcon;
 	@Field(name="admin") //yet to write relation
+	@DBRef
 	private Player admin;
 	@Field(name="members")
-	private List<Map<String, ?>> members;
+	private List<Map<String, MemberData>> members;
 	@Field(name="player_details_type")
 	private String playerDetailsType;
 	

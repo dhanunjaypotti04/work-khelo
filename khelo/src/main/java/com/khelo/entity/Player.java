@@ -4,21 +4,28 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@Document
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Builder
+@Document(collection = "players")
+@RequiredArgsConstructor
 public class Player {
 	
-	@Field(name="user_id")
+	@Id
+//	@Field(name="user_id")
 	private String id;
 	@Field(name="name")
 	private List<Map<String, String>> name;
@@ -33,7 +40,7 @@ public class Player {
 	@Field(name="khe_elo_rating")
 	private List<Map<String, Integer>> kheEloRating ;
 	@Field(name="communities")
-	private List<Map<String, String>> communities;
+	private List<Map<String, CommunityData>> communities;
 	@Field(name="device_token_id")
 	private String deviceTokenId;
 	@Field(name="profile_picture_url")
@@ -41,6 +48,15 @@ public class Player {
 	@Field(name="location")
 	private Map<String, Integer> location;
 	@Field(name="referral_details")
-	private Map<String, ?> referralDetails;
+	private Map<String, ReferralData> referralDetails;
+	@Override
+	public String toString() {
+		return "Player [id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email
+				+ ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", kheEloRating=" + kheEloRating
+				+ ", communities=" + communities + ", deviceTokenId=" + deviceTokenId + ", profilePictureUrl="
+				+ profilePictureUrl + ", location=" + location + ", referralDetails=" + referralDetails + "]";
+	}
+	
+	
 	
 }
