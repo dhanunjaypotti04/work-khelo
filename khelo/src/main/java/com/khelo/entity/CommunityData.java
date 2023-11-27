@@ -1,11 +1,10 @@
 package com.khelo.entity;
 
 import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import lombok.Data;
-
-@Component
+@Repository
 @Data
 public class CommunityData {
 	@DBRef
